@@ -1,0 +1,10 @@
+const mongoose = require( 'mongoose' );
+
+const userSchema = new mongoose.Schema({
+    email: String,
+    password: String,
+    date: { type: Date, default: Date.now }
+});
+
+const User = mongoose.model( 'auto', userSchema );
+module.exports = User
