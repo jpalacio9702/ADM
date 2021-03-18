@@ -1,0 +1,12 @@
+<ul class="nav navbar-dark bg-primary">
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" aria-current="page" [routerLink]="['/']">Creación de autos</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Listado de autos</a>
+  </li>
+</ul>
+<button type="button" class="btn btn-primary" [routerLink]="['/listar']">
+  Iniciar
+</button>
+<router-outlet></router-outlet>

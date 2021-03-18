@@ -1,0 +1,33 @@
+<ul class="nav navbar-dark">
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" aria-current="page" [routerLink]="['/']">Apostar</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Colectivo</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Decepaz</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Ermita</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Integra Colectivo</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Masivo</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Socobuses</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Taxi Premium</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+    <a class="nav-link" [routerLink]="['/listar']">Tax P&aacute;ramo</a>
+  </li>
+</ul>
+<!-- <button type="button" class="btn btn-primary" [routerLink]="['/listar']">
+  Iniciar
+</button> -->
+<router-outlet></router-outlet>
