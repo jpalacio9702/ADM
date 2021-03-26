@@ -1,0 +1,25 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ListarVehiculosComponent } from './listar-vehiculos/listar-vehiculos.component';
+import { ChatService } from './chat.service';
+import { WebsocketService } from './websocket.service';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ListarVehiculosComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TabsModule.forRoot()
+  ],
+  providers: [
+    ChatService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
