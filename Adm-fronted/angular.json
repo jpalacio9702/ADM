@@ -1,16 +1,16 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "1e5741f2-c64c-43ed-89d5-0736d192b9e1"
+    "analytics": "033db916-4bac-47e7-abb5-a844bb67054f"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ADM": {
+    "Adm-fronted": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
+        "@schematics/angular:component": {
+          "style": "sass"
         }
       },
       "root": "",
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ADM",
+            "outputPath": "dist/Adm-fronted",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,8 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.sass"
             ],
             "scripts": []
           },
@@ -54,13 +54,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ADM:build"
+            "browserTarget": "Adm-fronted:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ADM:build:production"
+              "browserTarget": "Adm-fronted:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ADM:build"
+            "browserTarget": "Adm-fronted:build"
           }
         },
         "test": {
@@ -95,7 +95,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.sass"
             ],
             "scripts": []
           }
@@ -117,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ADM:serve"
+            "devServerTarget": "Adm-fronted:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ADM:serve:production"
+              "devServerTarget": "Adm-fronted:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ADM"
+  "defaultProject": "Adm-fronted"
 }
