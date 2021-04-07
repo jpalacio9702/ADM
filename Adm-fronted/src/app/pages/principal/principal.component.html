@@ -1,1 +1,11 @@
-<p>principal works!</p>
+<div class="container row" *ngIf="lista.length">
+    <mat-card class="col-md-3" *ngFor="let item of lista">
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>{{ item.code }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+            <button mat-button>Ver tramas</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

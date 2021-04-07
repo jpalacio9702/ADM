@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { MatDividerModule } from '@angular/material/divider';
 import { PrincipalComponent } from './pages/principal/principal.component'
+import { MatCardModule } from '@angular/material/card';
  
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PrincipalComponent } from './pages/principal/principal.component'
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
