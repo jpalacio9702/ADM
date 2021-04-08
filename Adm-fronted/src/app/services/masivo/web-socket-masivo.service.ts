@@ -13,7 +13,15 @@ export class WebSocketMasivoService {
   public connect(url): Rx.Subject<MessageEvent> {
     if (!this.subject) {
       this.subject = this.create(url);
-      console.log("Successfully connected: " + url);
+      //console.log("Successfully connected: " + url);
+    }
+    return this.subject;
+  }
+
+  public recibe(url): Rx.Subject<MessageEvent> {
+    if (!this.subject) {
+      this.subject = this.escuchar(url);
+      //console.log(this.subject);
     }
     return this.subject;
   }
@@ -35,5 +43,16 @@ export class WebSocketMasivoService {
       }
     };
     return Rx.Subject.create(observer, observable);
+  }
+
+  private escuchar(url): Rx.Subject<MessageEvent> {
+    let ws = new WebSocket(url);
+
+    let observable = Rx.Observable.create((obs: Rx.Observer<MessageEvent>) => {
+      ws.onmessage = obs.next.bind(obs);
+      ws.onerror = obs.error.bind(obs);
+      return ws.onmessage;
+    });
+    return Rx.Subject.create(observable);
   }
 }

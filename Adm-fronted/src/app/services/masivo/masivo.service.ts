@@ -17,6 +17,7 @@ export interface Message {
 export class MasivoService {
 
   public messages: Subject<Message>;
+  public vehiculos: Subject<Message>;
 
   constructor(wsService: WebSocketMasivoService) {
     this.messages = <Subject<Message>>wsService.connect(CHAT_SITESAS).map(
@@ -28,5 +29,14 @@ export class MasivoService {
         };
       }
     );
+
+    this.vehiculos = <Subject<Message>>wsService.recibe(CHAT_SITESAS).map(
+      (response: MessageEvent): Message => {
+        let data = JSON.parse(response.data);
+        return data;
+      }
+    );
   }
+
+  
 }
