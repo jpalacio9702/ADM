@@ -7,21 +7,12 @@ import { PageNoFoundComponent } from './pages/page-no-found/page-no-found.compon
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    children: [
-      {
-        path: '/home',
-        component: HomeComponent
-      },
-      /*{
-        path: 'sign-in',
-        component: SignInComponent
-      },
-      {
-        path: 'sign-up',
-        component: SignUpComponent
-      }*/
-    ]
+    component: CommonModule,
+  },
+
+  {
+  	path:'about',
+  	component:HomeComponent
   },
 
   {
@@ -31,9 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
