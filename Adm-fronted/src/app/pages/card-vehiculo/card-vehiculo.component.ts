@@ -8,12 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardVehiculoComponent implements OnInit {
 
     @Input() vehiculo: {
-    code: '',
-    lat: '',
-    long: ''
-    vel: 0,
-    type: '',
-    odo: 0
+    
   };
 
   constructor() { }
